@@ -167,6 +167,11 @@ app.delete('/api/events/:day/:index', async (req, res) => {
     res.status(500).json({ error: 'Failed to delete event' });
   }
 });
+
+app.get('/', (req, res) => {
+  res.send('Welcome to the API!');
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
