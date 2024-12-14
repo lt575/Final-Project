@@ -20,7 +20,7 @@ db.on('error', (error) => {
 });
 
 db.once('open', () => {
-  console.log('Connected to MongoDB')'
+  console.log('Connected to MongoDB');
 });
 
 app.use('/api/auth', authRoutes);
