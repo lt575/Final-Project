@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Timer</title>
+    <link rel="stylesheet" href="../css/timer.css">
+    <script src="../js/theme.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Simple Timer</h2>
+        <input type="text" id="timeInput" placeholder="Enter time (HH:MM)" pattern="\d{1,2}:\d{2}">
+        <div class="controls">
+            <button id="startTimer">Start</button>
+            <button id="pauseTimer" disabled>Pause</button>
+            <button id="resetTimer" disabled>Reset</button>
+            <a href="homepage.html" class="button">Home</a>
+        </div>
+        <div id="displayTimer" class="timer">Time: 0:00:00</div>
+    </div>
+
+    <script src="../js/timer.js"></script>
+</body>
+</html>

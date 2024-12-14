@@ -1,0 +1,99 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.white {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.black {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+body.pink {
+    background-color: #ffe4e1;
+    color: #ff69b4;
+}
+
+
+body.blue {
+    background-color: #add8e6;
+    color: #00008b;
+}
+
+body.yellow {
+    background-color: #ffffe0;
+    color: #ffd700;
+}
+
+
+.settings-container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+
+.theme-options {
+    margin-top: 20px;
+}
+
+.theme-button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-button[data-theme="white"] {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+.theme-button[data-theme="black"] {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.theme-button[data-theme="pink"] {
+    background-color: #ffb6c1;
+    color: #ff1493;
+}
+
+.theme-button[data-theme="blue"] {
+    background-color: #87ceeb;
+    color: #00008b;
+}
+
+.theme-button[data-theme="yellow"] {
+    background-color: #ffff99;
+    color: #ffd700;
+}
+
+.theme-button:hover {
+    opacity: 0.8;
+}
+button, .button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 10px;
+    background-color: rgb(153, 82, 164);
+    color: white;
+    text-align: center;
+    text-decoration: none; 
+    display: inline-block;
+    margin-left:47% ;
+}
