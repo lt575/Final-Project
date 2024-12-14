@@ -11,15 +11,16 @@ app.use(cors({
   origin: '*'
 }));
 
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect(process.env.MONGODB_URI);
 
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+  
+db.on('error', (error) => {
+  console.error('MongoDB Connection Error:', error);
+});
+
 db.once('open', () => {
-  console.log('Connected to MongoDB');
+  console.log('Connected to MongoDB')'
 });
 
 app.use('/api/auth', authRoutes);
