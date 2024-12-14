@@ -1,0 +1,95 @@
+<!--
+    Description: This HTML file provides the contant of the login page
+    it links to the stylesheet (loginsignup.css) and contain a javascript for 
+    doing submission.
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <Title>Routine Traker</Title>
+        <link rel="stylesheet" href="../css/loginsignup.css">
+    </head>
+    <body>
+      <header>
+        <h2 class = "logo">Routine Traker</h2>
+    </header> 
+    <div class="wrapper">
+        <div class="logeinBox">
+            <h2>Login</h2>
+
+            <form >
+                <div class="inputField">
+                    <label for="userName">User name:</label>
+                    <input type="text" id="userName" name="userName"
+                    required
+                    pattern="[A-Z][a-zA-Z]*"
+                    title="Write a capital letter and contain only alphabetical characters only.">
+                </div>
+                <div class="inputField">
+                    <label for="email"> Email:</label>
+                    <input type="email" id="email" name="email" required >  
+                </div>
+                <div class="remember">
+                    <input type="checkbox" id="check" name="check">
+                    <label for="check"> Remember me:</label>
+                </div>
+                <div>
+                    <button type="submit" class="submitButton">Login</button>
+                </div>
+                <div class="register">
+                    <p>Don't have an account?
+                        <a href="signup.html" class="link">Register</a>
+                    </p>
+                </div>
+            </form>
+            
+        </div>
+    </div>  
+    <script>
+        const form = document.querySelector('form');
+        //add an event listener for the submission 
+        form.addEventListener('submit', (e) => {
+            const email = document.getElementById('email').value;
+            const username = document.getElementById('userName').value;
+            const remember = document.getElementById('check').checked;
+            const data = {
+                email: email,
+                username: username
+            };
+            async function login() {
+                //send a post request to the server
+                const response = await fetch('http://localhost:3000/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+           // check for the status of the code  
+           if (response.status === 401) {
+            const error = await response.json();
+            alert('Unauthorized: ' + error.message);
+            return;
+        } else if (response.status === 400) {
+            const error = await response.json();
+            alert('Bad Request: ' + error.message);
+            return;
+        } else if (response.status === 500) {
+            alert('Server error. Please try again later.');
+            return;
+        }
+            //if the status is 200 the login is successful    
+            if (response.status === 200) {
+                alert('Login successful!');
+                window.location.href = './homepage.html';
+            }
+            }
+            login();
+            e.preventDefault();
+            alert('Login submitted');
+        });
+    </script>
+
+    </body>
+</html>

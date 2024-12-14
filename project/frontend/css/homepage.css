@@ -1,0 +1,122 @@
+/* General Reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: darkred;
+    line-height: 1.6;
+    font-size: 100%;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: pink;
+    color: white;
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-left: 2rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* General Content Styling */
+.gen {
+    text-align: center;
+    background-color: white;
+    padding: 3rem 1rem;
+    box-shadow: 0 4px 8px black;
+}
+
+.gen h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.gen p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Buttons Styling */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.buttons .btn {
+    padding: 0.8rem 2rem;
+    background-color: pink;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons .btn:hover {
+    background-color: #e91e63; /* Slightly darker pink on hover */
+}
+
+/* Info Section Styling */
+.info {
+    padding: 3rem 2rem;
+    background-color: white;
+    margin-top: 2rem;
+}
+
+.info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.info p, .info ul {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.info ul {
+    list-style: disc;
+    margin-left: 2rem;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: darkred;
+    color: white;
+
+}
+.logo .theme {
+   
+    background-color: pink;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
